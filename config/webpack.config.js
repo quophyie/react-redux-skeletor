@@ -1,24 +1,24 @@
 'use strict'
-const webpack = require('webpack');
-const path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin')
+const webpack = require('webpack')
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const BUILD_DIR = path.resolve(__dirname, '../src/dist');
-const APP_DIR = path.resolve(__dirname, '../src/app');
+const BUILD_DIR = path.resolve(__dirname, '../src/dist')
+const APP_DIR = path.resolve(__dirname, '../src/app')
 const NODE_MODULES_DIR = path.resolve(__dirname, '../node_modules')
 
 const config = {
   entry: [
     'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-   `${APP_DIR}/app` // Your appʼs entry point
+    `${APP_DIR}/app` // Your appʼs entry point
   ],
   output: {
     path: BUILD_DIR,
-    filename: 'bundle.js', ////this is the default name, so you can skip it
-    //at this directory our bundle file will be available
-    //make sure port 3000 is used when launching webpack-dev-server
-    //In our example we will access our index.html from
+    filename: 'bundle.js', // //this is the default name, so you can skip it
+    // at this directory our bundle file will be available
+    // make sure port 3000 is used when launching webpack-dev-server
+    // In our example we will access our index.html from
     // http://localhost:3000/dist/index.html
     publicPath: '/dist'
   },
@@ -44,14 +44,14 @@ const config = {
       },
       {
         test: /\.css$/,
-        loader:'style!css'
+        loader: 'style!css'
       },
       {
         test: /\.html$/,
-        loader: "raw-loader" // loaders: ['raw-loader'] is also perfectly acceptable.
+        loader: 'raw-loader' // loaders: ['raw-loader'] is also perfectly acceptable.
       }
-      ]
-  },                  
+    ]
+  },
   devServer: {
     // IF YOU ARE DOING ONLY JAVASCRIPT(MODULE) RELOADING AND NOT BOTH JAVASCRIPT(MODULE) AND HTML RELOADING,
     // THEN UNCOMMENT 'hot: true' BELOW. IF YOU ARE DOING BOTH JAVASCRIPT(MODULE) AND HTML RELOADING, THEN
@@ -63,10 +63,10 @@ const config = {
     historyApiFallback: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin() ,
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
-      filename: `index.html`,
+      filename: 'index.html',
       inject: 'body',
       template: `${APP_DIR}/index.html`
     })

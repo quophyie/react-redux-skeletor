@@ -9,7 +9,8 @@
     "dev": "node server",
     "serve": "./node_modules/.bin/http-server -p 8080",
     "devWebpackDevSvr": "webpack-dev-server --progress --colors --config  ./config/webpack.config.orig.js",
-    "devWebpackDevSvrWorking": "webpack-dev-server --progress --colors --port 3000 --config ./config/webpack.config.orig.js --content-base ./src/dist --inline"
+    "devWebpackDevSvrWorking": "webpack-dev-server --progress --colors --port 3000 --config ./config/webpack.config.orig.js --content-base ./src/dist --inline",
+    "standard": "standard --verbose"
   },
   "keywords": [
     "react",
@@ -31,6 +32,11 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-0": "^6.16.0",
     "babel-runtime": "^6.11.6",
+    "eslint": "^3.7.1",
+    "eslint-config-standard": "^6.2.0",
+    "eslint-plugin-promise": "^2.0.1",
+    "eslint-plugin-react": "^6.3.0",
+    "eslint-plugin-standard": "^2.0.1",
     "html-webpack-plugin": "^2.22.0",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.0.0-beta.5",

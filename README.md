@@ -1,3 +1,5 @@
+[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
+
 # React Redux Skeletor (React Redux Boilerplate)
 A react-redux starter kit (i.e. skeleton hence the name skeletor) to get you started started on creating react-redux applications. 
 This kit already comes pre-configured with some commonly used tools such as webpack, webpack-dev-server, babel, eslint etc pre-configured. 
