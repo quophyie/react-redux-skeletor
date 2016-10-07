@@ -26,7 +26,7 @@ This skeleton favours a directory structure where components are grouped by feat
 
 # File Structure
 
-    ```javascript
+```javascript
     |_ .eslintrc
     |_ package.json
     |_ README.md
@@ -117,7 +117,7 @@ This skeleton favours a directory structure where components are grouped by feat
     |_ _ _ _ _ _ _ _ _ _ _ _ /utils
     |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ /SomeReallyCoolUtilTests
     |_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ index.js
-    ``` 
+``` 
     
  The  **`React Redux Skeletor`**  file structure is very simple to follow. The general idea is that we group  **`React Redux`**  components
  by  modules/features. Each module / feature contains one or more **`React Redux`**  component which may also contain further child
@@ -149,7 +149,7 @@ This skeleton favours a directory structure where components are grouped by feat
  
  An example of **`Ducks`** module
   
-  ```javascript
+```javascript
   // widgets.js
   
   // Actions
@@ -182,7 +182,7 @@ This skeleton favours a directory structure where components are grouped by feat
   export function removeWidget(widget) {
     return { type: REMOVE, widget };
   }
-  ```
+ ```
   
  
 The **`/src/app/shared`** directory contains resources and multipurpose components that can and should be shared by other components (irrespective or parents and siblings) 
