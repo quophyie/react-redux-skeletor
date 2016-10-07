@@ -7,9 +7,13 @@ const BUILD_DIR = path.resolve(__dirname, '../src/dist')
 const APP_DIR = path.resolve(__dirname, '../src/app')
 const NODE_MODULES_DIR = path.resolve(__dirname, '../node_modules')
 
+process.env.PORT = process.env.PORT ? process.env.PORT : 3000
+process.env.HOST = process.env.HOST ? process.env.HOST : 'localhost'
+process.env.WEBPACK_PUBLIC_PATH = process.env.WEBPACK_PUBLIC_PATH ? process.env.WEBPACK_PUBLIC_PATH : '/'
+
 const config = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000', // WebpackDevServer host and port
+    `webpack-dev-server/client?http://${process.env.HOST}:${process.env.PORT}`, // WebpackDevServer host and port
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     `${APP_DIR}/app` // Your appʼs entry point
   ],
@@ -20,7 +24,7 @@ const config = {
     // make sure port 3000 is used when launching webpack-dev-server
     // In our example we will access our index.html from
     // http://localhost:3000/dist/index.html
-    publicPath: '/dist'
+    publicPath: process.env.WEBPACK_PUBLIC_PATH
   },
   // Important! Do not remove ''. If you do, imports without
   // an extension won't work anymore!
@@ -59,7 +63,7 @@ const config = {
     // WILL WORK
     // hot: true,
     contentBase: BUILD_DIR,
-    port: 3000,
+    port: `${process.env.PORT}`,
     historyApiFallback: true
   },
   plugins: [

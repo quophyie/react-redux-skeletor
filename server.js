@@ -2,7 +2,18 @@
 
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const config = require('./config/webpack.config.js')
+const path = require('path')
+
+let webpackConfigFilename = './config/webpack.config.dev.js'
+
+if (process.env.NODE_ENV && process.env.NODE_ENV.toLowerCase() === 'production') {
+  webpackConfigFilename = './config/webpack.config.production.js'
+}
+
+console.log(`NODE_ENV: ${process.env.NODE_ENV}`)
+console.log(`USING WEBPACKONFIG FILE: ${path.resolve(__dirname, webpackConfigFilename)}`)
+
+const config = require(webpackConfigFilename)
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -20,9 +31,9 @@ new WebpackDevServer(webpack(config), {
   },
   inline: true,
   historyApiFallback: true
-}).listen(3000, 'localhost', function (err, result) {
+}).listen(process.env.PORT, process.env.HOST, function (err, result) {
   if (err) {
     return console.log(err)
   }
-  console.log('Listening at http://localhost:3000/')
+  console.log(`Listening at http://${process.env.HOST}:${process.env.PORT}/`)
 })
