@@ -227,7 +227,7 @@ When the command below is issued, **only Javascript** sources will be hot reload
   
 #### Start Dev Server With Hot Module Relaod of Both HTML and  JavaScript Modules
 
-When the command below is issued, **HTML and  Javascript** sources will be hot reloaded (In this case the browser will refresh)
+When the command below is issued, **HTML and  Javascript** sources will be hot reloaded (In this case the browser will refresh automatically)
    
    **`$ npm run dev_with_html_reload`**
    
