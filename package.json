@@ -5,11 +5,15 @@
   "main": "app.js",
   "scripts": {
     "test": "npm test",
-    "start": "npm run serve",
-    "dev": "node server",
-    "serve": "./node_modules/.bin/http-server -p 8080",
-    "devWebpackDevSvr": "webpack-dev-server --progress --colors --config  ./config/webpack.config.orig.js",
-    "devWebpackDevSvrWorking": "webpack-dev-server --progress --colors --port 3000 --config ./config/webpack.config.orig.js --content-base ./src/dist --inline",
+    "start": "export NODE_ENV=production && npm run serve",
+    "dev": "npm run serve",
+    "dev_with_html_reload": "export WEBPACK_HTML_HOT_RELOAD=true && npm run dev",
+    "dev_with_linting": "npm run standard && npm run dev",
+    "webpack": "webpack -d --config ./config/webpack.config.production.js",
+    "clean_dist_dir": "find ./src/dist -type f -not -name '.gitkeep' -print0 | xargs -0 rm -rvf ",
+    "build": "npm run clean_dist_dir && npm run standard && npm run webpack",
+    "build_nolinting": "npm run clean_dist_dir && npm run webpack",
+    "serve": "node server",
     "standard": "standard --verbose"
   },
   "keywords": [
@@ -48,6 +52,7 @@
     "history": "^4.3.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
-    "react-router": "^2.8.1"
+    "react-router": "^2.8.1",
+    "react-thunk": "^1.0.0"
   }
 }

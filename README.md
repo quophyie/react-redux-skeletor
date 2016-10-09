@@ -1,9 +1,10 @@
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 # React Redux Skeletor (React Redux Boilerplate)
-A react-redux skeletor is a starter kit (i.e. skeleton hence the name skeletor) to get you started started on creating react-redux applications
-without having to think about . 
-This kit already comes pre-configured with some commonly used tools such as webpack, webpack-dev-server, babel, eslint etc pre-configured. 
+A **`react-redux skeletor`** is a starter kit (i.e. skeleton hence the name skeletor) to get you started started on creating react-redux applications
+without having to think about the basic structure of you app or the basic packages you require. 
+
+This skeleton already comes pre-configured with some commonly used tools such as react, redux, redux-thunk,webpack, webpack-dev-server, babel, eslint etc pre-configured. 
 This skeleton favours a directory structure where components are grouped by features
 
 # Usage
@@ -123,7 +124,7 @@ This skeleton favours a directory structure where components are grouped by feat
  by  modules/features. Each module / feature contains one or more **`React Redux`**  component which may also contain further child
  **`React Redux`**  components and so on and so forth. 
  
- Generally speaking, the **`/src`** folder contains all the image and style assets as well modules which contain the components. 
+ Generally speaking, the **`/src`** is the root of your application. 
  The **`/src/app`** contains two main directories i.e. **`modules`** and **`shared`**. 
  The **`modules`** contains a **`components`**  that cannot be shared outside of their parent / containing component. In our example, 
  **`MySuperCoolButtonComponent`** can only be shared with its sibling components (i.e. **`MySuperSliderComponent`** can use an instance of **`MySuperCoolButtonComponent`**) 
@@ -150,37 +151,37 @@ This skeleton favours a directory structure where components are grouped by feat
  An example of **`Ducks`** module
   
 ```javascript
-  // widgets.js
-  
+  'use strict'
   // Actions
-  const LOAD   = 'my-app/widgets/LOAD';
-  const CREATE = 'my-app/widgets/CREATE';
-  const UPDATE = 'my-app/widgets/UPDATE';
-  const REMOVE = 'my-app/widgets/REMOVE';
+  const LOAD = 'my-react-redux-app/widgets/LOAD'
+  const CREATE = 'my-react-redux-app/widgets/CREATE'
+  const UPDATE = 'my-react-redux-app/widgets/UPDATE'
+  const REMOVE = 'my-react-redux-app/widgets/REMOVE'
   
   // Reducer
-  export default function reducer(state = {}, action = {}) {
+  export default function reducer (state = {}, action = {}) {
     switch (action.type) {
       // do reducer stuff
-      default: return state;
+      default:
+        return state
     }
   }
   
   // Action Creators
-  export function loadWidgets() {
-    return { type: LOAD };
+  export function loadWidgets () {
+    return { type: LOAD }
   }
   
-  export function createWidget(widget) {
-    return { type: CREATE, widget };
+  export function createWidget (widget) {
+    return { type: CREATE, widget }
   }
   
-  export function updateWidget(widget) {
-    return { type: UPDATE, widget };
+  export function updateWidget (widget) {
+    return { type: UPDATE, widget }
   }
   
-  export function removeWidget(widget) {
-    return { type: REMOVE, widget };
+  export function removeWidget (widget) {
+    return { type: REMOVE, widget }
   }
  ```
   
@@ -195,7 +196,7 @@ The **`/src/app/index.html`** (optional). If you prefer to use html page as the 
 The **`/src/app/dist`** directory contains the built resources. In our example the **`bundle.js`** produced by **`webpack`** will be stored here 
 
 The **`/src/app/test`** directory contains the tests. The folder structure should follow that found in **`/src/app/modules`** and **`/src/app/shared`** directories. 
-However, test directories should end  with the suffix **`Tests`** e.g. MySuperCoolProfileImageComponentTests
+However, test directories should end  with the suffix **`Tests`** e.g. **`MySuperCoolProfileImageComponentTests`**
 
 The **`/config`** directory configurations and other other artifacts to aid in development and building the app. 
 The items in the **`/config`**  folder are not to be included in the final build of the app. 
@@ -227,6 +228,7 @@ When the command below is issued, **only Javascript** sources will be hot reload
 #### Start Dev Server With Hot Module Relaod of Both HTML and  JavaScript Modules
 
 When the command below is issued, **HTML and  Javascript** sources will be hot reloaded (In this case the browser will refresh)
+   
    **`$ npm run dev_with_html_reload`**
    
 ### Building Production Artifact

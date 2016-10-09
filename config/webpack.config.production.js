@@ -13,8 +13,6 @@ process.env.WEBPACK_PUBLIC_PATH = process.env.WEBPACK_PUBLIC_PATH ? process.env.
 
 const config = {
   entry: [
-    `webpack-dev-server/client?http://${process.env.HOST}:${process.env.PORT}`, // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     `${APP_DIR}/app` // Your appʼs entry point
   ],
   output: {

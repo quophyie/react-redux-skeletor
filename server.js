@@ -15,7 +15,7 @@ console.log(`USING WEBPACKONFIG FILE: ${path.resolve(__dirname, webpackConfigFil
 
 const config = require(webpackConfigFilename)
 
-new WebpackDevServer(webpack(config), {
+const webpackOptions = {
   publicPath: config.output.publicPath,
   // IF YOU ARE DOING ONLY JAVASCRIPT(MODULE) RELOADING AND NOT BOTH JAVASCRIPT(MODULE) AND HTML RELOADING,
   // THEN UNCOMMENT 'hot: true' BELOW. IF YOU ARE DOING BOTH JAVASCRIPT(MODULE) AND HTML RELOADING, THEN
@@ -31,7 +31,18 @@ new WebpackDevServer(webpack(config), {
   },
   inline: true,
   historyApiFallback: true
-}).listen(process.env.PORT, process.env.HOST, function (err, result) {
+}
+
+const isHtmlHot = process.env.WEBPACK_HTML_HOT_RELOAD && process.env.WEBPACK_HTML_HOT_RELOAD.toLowerCase() === 'true'
+
+if (!isHtmlHot) {
+  console.log('HTML hot reloader disabled!')
+  webpackOptions.hot = true
+} else {
+  console.log('HTML hot reloader enabled!')
+}
+
+new WebpackDevServer(webpack(config), webpackOptions).listen(process.env.PORT, process.env.HOST, function (err, result) {
   if (err) {
     return console.log(err)
   }
