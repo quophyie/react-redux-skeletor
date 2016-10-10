@@ -230,9 +230,9 @@ The dev server can be passed environment variables that controls how the dev ser
 The following are supported
 
 
-  **`HOST`** - The server host (default **`loccalhot` **) e.g. **`mydomain.com` or `127.0.0.1` **
+  **`HOST`** - The server host (default **`loccalhost`**) e.g. **`mydomain.com` or `127.0.0.1`**
   
-  **`PORT`** - The server port (default **`3000` **) e.g. **`8080` **
+  **`PORT`** - The server port (default **`3000`**) e.g. **`8080`**
   
   **`WEBPACK_HTML_HOT_RELOAD`** - If **`true`** then **`HTML Hot Reloading`** will be enbaled e.g. **`3000` **
   
