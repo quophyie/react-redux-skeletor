@@ -14,14 +14,18 @@ This skeleton favours a directory structure where components are grouped by feat
    
      **`$ git clone https://github.com/quophyie/react-redux-skeletor.git .`**
    
-   3. Navigate to **`/src/app/app/modules`** and create a [Redux React component](http://redux.js.org/docs/basics/UsageWithReact.html)
+   3.  Navigate to your **`React Redux Skeletor`** root directory and install the **`React Redux Skeletor`**  packages with the following command
    
-   4. Run the dev server
+     **`$ npm install`**
+   
+   4. Navigate to **`/src/app/app/modules`**  of your **`React Redux Skeletor`** directory and create a [Redux React component](http://redux.js.org/docs/basics/UsageWithReact.html)
+   
+   5. Run the dev server
    
      **`$ npm run dev`**
      
-   5. From your browser, navigate to **`http://localhost:3000/webpack-dev-server/index.html`**
-     
+   6. From your browser, navigate to **`http://localhost:3000/webpack-dev-server/index.html`**
+                                
      Thats it!!
 
 
