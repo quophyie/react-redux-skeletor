@@ -234,9 +234,9 @@ The following are supported
   
   **`PORT`** - The server port (default **`3000`**) e.g. **`8080`**
   
-  **`WEBPACK_HTML_HOT_RELOAD`** - If **`true`** then **`HTML Hot Reloading`** will be enbaled e.g. **`3000` **
+  **`WEBPACK_HTML_HOT_RELOAD`** - If **`true`** then **`HTML Hot Reloading`** will be enbaled e.g. **`3000`**
   
-  **`NODE_ENV`** - The environment to target. If **`production`** then **`web.config.production.js`** will be loaded e.g. **`3000` **
+  **`NODE_ENV`** - The environment to target. If **`production`** then **`web.config.production.js`** will be loaded e.g. **`3000`**
       
    `$ HOST=mydomain.com PORT=8080 npm run dev`
    
