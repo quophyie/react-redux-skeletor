@@ -1,10 +1,10 @@
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 # React Redux Skeletor (React Redux Boilerplate)
-A **`react-redux skeletor`** is a starter kit (i.e. skeleton hence the name skeletor) to get you started started on creating react-redux applications
-without having to think about the basic structure of you app or the basic packages you require. 
+A **`react-redux skeletor`** is a starter kit (i.e. skeleton hence the name skeletor) to get you started started on creating 
+react-redux applications without having to think about the basic structure of your app or the basic packages you require. 
 
-This skeleton already comes pre-configured with some commonly used tools such as react, redux, redux-thunk,webpack, webpack-dev-server, babel, eslint etc pre-configured. 
+This skeleton already comes pre-configured with some commonly used tools and packages such as react, redux, redux-thunk,webpack, webpack-dev-server, babel, eslint etc pre-configured. 
 This skeleton favours a directory structure where components are grouped by features
 
 # Usage
@@ -12,7 +12,7 @@ This skeleton favours a directory structure where components are grouped by feat
    
    2.  Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) if you dont already have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed and issue then issue the command
    
-     **`git clone https://github.com/quophyie/react-redux-skeletor.git .`**
+     **`$ git clone https://github.com/quophyie/react-redux-skeletor.git .`**
    
    3. Navigate to **`/src/app/app/modules`** and create a [Redux React component](http://redux.js.org/docs/basics/UsageWithReact.html)
    
@@ -20,7 +20,7 @@ This skeleton favours a directory structure where components are grouped by feat
    
      **`$ npm run dev`**
      
-   5. From your browser , navigate to **`http://localhost:3000/webpack-dev-server/index.html`**
+   5. From your browser, navigate to **`http://localhost:3000/webpack-dev-server/index.html`**
      
      Thats it!!
 
@@ -124,8 +124,7 @@ This skeleton favours a directory structure where components are grouped by feat
  by  modules/features. Each module / feature contains one or more **`React Redux`**  component which may also contain further child
  **`React Redux`**  components and so on and so forth. 
  
- Generally speaking, the **`/src`** is the root of your application. 
- The **`/src/app`** contains two main directories i.e. **`modules`** and **`shared`**. 
+ Generally speaking, the **`/src`** is the root of your application. The **`/src/app`** contains two main directories i.e. **`modules`** and **`shared`**. 
  The **`modules`** contains a **`components`**  that cannot be shared outside of their parent / containing component. In our example, 
  **`MySuperCoolButtonComponent`** can only be shared with its sibling components (i.e. **`MySuperSliderComponent`** can use an instance of **`MySuperCoolButtonComponent`**) 
  but cannot be cannot be shared outside its parent component (i.e.  **`MySuperCoolButtonComponent`** cannot be shared outside
@@ -186,7 +185,7 @@ This skeleton favours a directory structure where components are grouped by feat
  ```
   
  
-The **`/src/app/shared`** directory contains resources and multipurpose components that can and should be shared by other components (irrespective or parents and siblings) 
+The **`/src/app/shared`** directory contains resources and multi-purpose components and modules that can and should be shared by other components (irrespective or parents and siblings) 
 and resources
 
 The **`/src/app/app.js`** is the application entry point
@@ -201,13 +200,6 @@ However, test directories should end  with the suffix **`Tests`** e.g. **`MySupe
 The **`/config`** directory configurations and other other artifacts to aid in development and building the app. 
 The items in the **`/config`**  folder are not to be included in the final build of the app. 
 In **`React Redux Skeletor`** we store our **`webpack.config.js`** and **`.babelrc`** files in the **`/config`** directory   
-
-The file `/server.js` should be used to start your server. The server **`port`** and **`host`** can be passed environment variables
-For example 
-
-`$ HOST=mydomain.com PORT=8080 node server`  or `$ HOST=mydomain.com PORT=8080 npm run dev`
-
-If **`port`** and **`host`** are not provided then the defaults of **`3000`** and `localhost` are used as defaults for **`port`** and **`host`** respectively
 
 # Pre-Configured Dev Tools
 
@@ -230,6 +222,26 @@ When the command below is issued, **only Javascript** sources will be hot reload
 When the command below is issued, **HTML and  Javascript** sources will be hot reloaded (In this case the browser will refresh automatically)
    
    **`$ npm run dev_with_html_reload`**
+   
+#### Dev Server Environment Variables
+
+The dev server can be passed environment variables that controls how the dev server is started / initiated
+
+The following are supported
+
+
+  **`HOST`** - The server host (default **`loccalhot` **) e.g. **`mydomain.com` or `127.0.0.1` **
+  
+  **`PORT`** - The server port (default **`3000` **) e.g. **`8080` **
+  
+  **`WEBPACK_HTML_HOT_RELOAD`** - If **`true`** then **`HTML Hot Reloading`** will be enbaled e.g. **`3000` **
+  
+  **`NODE_ENV`** - The environment to target. If **`production`** then **`web.config.production.js`** will be loaded e.g. **`3000` **
+      
+   `$ HOST=mydomain.com PORT=8080 npm run dev`
+   
+ If **`PORT`** and **`HOST`** are not provided then the defaults of **`3000`** and `localhost` are used as defaults for **`port`** and **`host`** respectively
+
    
 ### Building Production Artifact
 

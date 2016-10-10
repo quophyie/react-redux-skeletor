@@ -33,7 +33,7 @@ const webpackOptions = {
   historyApiFallback: true
 }
 
-const isHtmlHot = process.env.WEBPACK_HTML_HOT_RELOAD && process.env.WEBPACK_HTML_HOT_RELOAD.toLowerCase() === 'true'
+const isHtmlHot = process.env.WEBPACK_HTML_HOT_RELOAD && process.env.WEBPACK_HTML_HOT_RELOAD.toLowerCase().trim() === 'true'
 
 if (!isHtmlHot) {
   console.log('HTML hot reloader disabled!')
