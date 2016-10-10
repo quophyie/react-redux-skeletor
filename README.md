@@ -230,7 +230,7 @@ The dev server can be passed environment variables that controls how the dev ser
 The following are supported
 
 
-  **`HOST`** - The server host (default **`loccalhost`**) e.g. **`mydomain.com` or `127.0.0.1`**
+  **`HOST`** - The server host (default **`localhost`**) e.g. **`mydomain.com` or `127.0.0.1`**
   
   **`PORT`** - The server port (default **`3000`**) e.g. **`8080`**
   
