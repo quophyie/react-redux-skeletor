@@ -236,6 +236,14 @@ The following are supported
   
   **`WEBPACK_HTML_HOT_RELOAD`** - If **`true`** then **`HTML Hot Reloading`** will be enbaled e.g. **`3000`**
   
+  **`WEBPACK_PUBLIC_PATH`** - The path relative to the **`host:port`** (e.g. **`http://localhost:3000`**) from which modules
+   should be served from. For example if **`WEBPACK_PUBLIC_PATH`** is **`/dist`**, then **`bundle.js`** and **`index.html`** 
+   will both be served from **`http://localhost:3000/dist/bundle.js`** and **`http://localhost:3000/dist/index.html`** 
+   respectively
+   
+ **NOTE ** As **`React Redux Skeletor`** comes pre-configured with WebPack plugin **`HtmlWebpackPlugin`**,  **`index.html`** will
+will be injected with **`http://localhost:3000/dist/bundle.js`**  automatically when the application is built 
+  
   **`NODE_ENV`** - The environment to target. If **`production`** then **`web.config.production.js`** will be loaded e.g. **`3000`**
       
    `$ HOST=mydomain.com PORT=8080 npm run dev`
@@ -260,4 +268,23 @@ The following are supported
     
   **`$ npm run build_nolinting`**
   
-  In all cases, the built artifacts will be stored at  **`/src/app/dist`** 
+  In all cases, the built artifacts will be stored at  **`/src/app/dist`**
+   
+   **`WEBPACK_PUBLIC_PATH`** - The path relative to the **`host:port`** (e.g. **`http://localhost:3000`**) from which modules
+      should be served from. For example if **`WEBPACK_PUBLIC_PATH`** is **`/dist`**, then **`bundle.js`** and **`index.html`** 
+      will both be served from **`http://localhost:3000/dist/bundle.js`** and **`http://localhost:3000/dist/index.html`** 
+      respectively
+      
+#### Production Build Environment Variables
+   
+ You can use environment variables to controle certain aspects of  the built artifacts
+ 
+ The following are supported
+ 
+ **`WEBPACK_PUBLIC_PATH`** - The path relative to the **`host:port`** (e.g. **`http://localhost:3000`**) from which modules
+ should be served from. For example if **`WEBPACK_PUBLIC_PATH`** is **`/dist`**, then **`bundle.js`** and **`index.html`** 
+ will both be served from **`http://localhost:3000/dist/bundle.js`** and **`http://localhost:3000/dist/index.html`** 
+ respectively
+       
+ **NOTE ** As **`React Redux Skeletor`** comes pre-configured with WebPack plugin **`HtmlWebpackPlugin`**,  **`index.html`** will
+ will be injected with **`http://localhost:3000/dist/bundle.js`**  automatically when the application is built
