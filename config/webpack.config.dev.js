@@ -17,6 +17,7 @@ const config = {
     'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     `${APP_DIR}/app` // Your appʼs entry point
   ],
+  devtool: 'inline-source-map',
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js', // //this is the default name, so you can skip it
